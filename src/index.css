@@ -1,3 +1,6 @@
+html {
+  overflow-y: hidden;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +8,22 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#root {
+  height: 100vh;
+}
+
+.react-pdf__Page__canvas {
+  margin: 0 auto;
+  width: 90% !important;
+  height: 90% !important;
+  border: 1px solid black;
 }
