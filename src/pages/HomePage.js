@@ -3,12 +3,13 @@ import { Typography, Button, Divider, List, ListItem } from '@material-ui/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faFileAlt, faAt, faHammer } from '@fortawesome/free-solid-svg-icons'
-import { Document, Page } from 'react-pdf/dist/esm/entry.webpack'
 import SkillList from '../components/SkillList'
 import { sidenavTabs } from '../utils'
 import HobbySection from '../components/HobbySection'
 import MeLol from '../assets/MeLol.png'
 import CV from '../assets/Sean_Rooney_CV.pdf'
+import { Document, Page, pdfjs } from 'react-pdf'
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
 
 const HomePage = () => {
   //const aboutMeRef = useRef(null)
