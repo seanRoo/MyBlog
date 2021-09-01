@@ -1,9 +1,7 @@
-import { icon } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Typography } from '@material-ui/core'
 import { hobbies } from '../utils'
 
-const HobbyList = () => (
+const HobbyList = ({ isMobile }) => (
   <ul
     style={{
       display: 'flex',
@@ -18,29 +16,15 @@ const HobbyList = () => (
       <>
         <li
           style={{
-            width: '15%',
-            minHeight: 200,
-            marginBottom: 10 || 'auto',
+            width: '28%',
+            minHeight: 100,
+            marginBottom: 20,
             height: 'auto',
             textAlign: 'center',
           }}
         >
           {hobby.icons?.map((Icon) => (
-            //     Icon?.isAlternateIcon ? (
-            //       <FontAwesomeIcon icon={Icon.value} color={Icon.color} size="3x" />
-            //     ) : (
-            //       <Icon.value
-            //         size={Icon?.size || 28}
-            //         color={Icon.color}
-            //         style={{ paddingRight: 4 }}
-            //       />
-            //     )
-            //   )
-            <Icon.value
-              size={60}
-              //color={'rgba((108,81,164)'}
-              style={{ color: 'rgba(108,81,164, .8)' }}
-            />
+            <Icon.value size={60} style={{ color: 'rgba(108,81,164, .8)' }} />
           ))}
           <Typography component="h5" gutterBottom>
             {hobby.title}

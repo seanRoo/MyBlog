@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Typography } from '@material-ui/core'
 import { skills } from '../utils'
 
-const SkillList = () => (
+const SkillList = ({ isMobile }) => (
   <ul
     style={{
       display: 'flex',
@@ -12,15 +12,16 @@ const SkillList = () => (
       flexWrap: 'wrap',
       listStyle: 'none',
       paddingLeft: 0,
+      marginBottom: 0,
     }}
   >
-    {skills.map((skill) => (
+    {skills.map((skill, index) => (
       <>
         <li
           style={{
-            width: '32%',
-            minHeight: 200,
-            marginBottom: 10 || 'auto',
+            width: isMobile ? '100%' : '32%',
+            minHeight: isMobile ? 100 : 200,
+            marginBottom: index === skills.length - 1 && isMobile ? 0 : 20,
             height: 'auto',
           }}
         >

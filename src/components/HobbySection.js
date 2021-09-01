@@ -1,15 +1,15 @@
-import { Typography, Button, Divider, List, ListItem } from '@material-ui/core'
+import { Typography } from '@material-ui/core'
 import HobbyList from './HobbyList'
 
-const HobbySection = (ref) => {
+const HobbySection = ({ isMobile }) => {
   return (
     <div
       style={{
         backgroundColor: 'white',
         scrollSnapAlign: 'center',
-        padding: 40,
-        paddingTop: 0,
-        paddingBottom: 0,
+        paddingLeft: isMobile ? 20 : 40,
+        paddingRight: isMobile ? 20 : 40,
+        minHeight: isMobile ? 500 : 200,
       }}
     >
       <div style={{ marginBottom: 36 }}>
@@ -27,7 +27,7 @@ const HobbySection = (ref) => {
           </Typography>
         </div>
       </div>
-      <HobbyList />
+      <HobbyList isMobile={isMobile} />
     </div>
   )
 }
