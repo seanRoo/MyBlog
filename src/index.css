@@ -9,7 +9,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-snap-type: y mandatory;
-  overflow-y: scroll;
 }
 
 code {
@@ -19,6 +18,7 @@ code {
 
 #root {
   height: 100vh;
+  /* overflow-y: hidden; */
 }
 
 .react-pdf__Page__canvas {

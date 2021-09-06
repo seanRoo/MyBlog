@@ -9,10 +9,10 @@ const HobbySection = ({ isMobile }) => {
         scrollSnapAlign: 'center',
         paddingLeft: isMobile ? 20 : 40,
         paddingRight: isMobile ? 20 : 40,
-        minHeight: isMobile ? 500 : 200,
+        //minHeight: isMobile ? '40%' : '80%',
       }}
     >
-      <div style={{ marginBottom: 36 }}>
+      <div>
         <div
           style={{
             borderLeft: '6px solid #6c51a4',

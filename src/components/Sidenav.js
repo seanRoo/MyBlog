@@ -26,13 +26,12 @@ const Sidenav = ({ handleClick, isMobile }) => {
             flexDirection: 'column',
             padding: 20,
             backgroundColor: '#6c51a4',
-            overflowY: 'scroll',
             height: '100%',
           }}
         >
           <div
             style={{
-              flex: 0.4,
+              flex: 0.2,
               display: 'flex',
               alignItems: 'center',
               flexDirection: 'column',
