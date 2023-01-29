@@ -10,6 +10,7 @@ import {
   Angular,
   Testinglibrary,
   Javascript,
+  Typescript,
   Java,
   Cplusplus,
   Csharp,
@@ -22,6 +23,11 @@ import {
   NodeDotJs,
   Python,
   Stackoverflow,
+  Git,
+  Jenkins,
+  Github,
+  Bamboo,
+  Jira,
 } from '@icons-pack/react-simple-icons'
 import { BiFootball, BiDumbbell } from 'react-icons/bi'
 import { GiAirplaneDeparture } from 'react-icons/gi'
@@ -57,9 +63,12 @@ export const hobbies = [
 ]
 export const skills = [
   {
-    title: 'Vanilla JavaScript',
-    icons: [{ value: Javascript, color: '#F1DE4F', size: 36 }],
-    body: "Before working with any UI frameworks I learned good ol' fashioned Vanilla JS in college and continue to use it daily in my day job and side projects. It has definitely become my programming language of choice, particularly because of its dynamic uses and its popularity in the industry. I try to make a conscious effort to learn and utilise the latest ECMAScript techniques and features in the code I write daily.",
+    title: 'TypeScript/JavaScript',
+    icons: [
+      { value: Typescript, color: '#3178c6', size: 36 },
+      { value: Javascript, color: '#F1DE4F', size: 36 },
+    ],
+    body: 'Before working with any UI frameworks I developed solid knowledge of JavaScript fundamentals in university and continue to use it daily in my day job and side projects. Recently I have made an effort to adopt TypeScript for that added type safety and use it exclusively in my current development position.',
   },
   {
     title: 'React, React Native & Angular',
@@ -118,6 +127,26 @@ export const skills = [
     body: `Like most developers, I credit my degrees to this community (Maybe YouTube tutorials should also take some credit). StackOverflow has also helped me feel a
       little bit less of an imposter in my few years as a Software Engineer, so it deserves that credit too!`,
   },
+  {
+    title: 'Developer Tools',
+    icons: [
+      { value: Git, color: '#f14e32' },
+      { value: Github, color: 'black' },
+      { value: Jenkins, color: '#D24939' },
+      { value: Jira, color: 'blue' },
+      { value: Bamboo, color: 'green' },
+    ],
+    body: (
+      <ul style={{ paddingLeft: 20 }}>
+        <li>Git</li>
+        <li>GitHub</li>
+        <li>Jenkins</li>
+        <li>Jira</li>
+        <li>Bamboo</li>
+        <li>Stash</li>
+      </ul>
+    ),
+  },
 ]
 
 export const sidenavTabs = [
@@ -127,7 +156,7 @@ export const sidenavTabs = [
     ref: 'aboutMeRef',
   },
   { text: 'Tech', icon: faLaptopCode, ref: 'portfolioRef' },
-  { text: 'CV', icon: faFileAlt, ref: 'cvRef' },
+  //{ text: 'CV', icon: faFileAlt, ref: 'cvRef' },
   { text: 'Hobbies', icon: faFutbol, ref: 'hobbiesRef' },
   //{ text: 'Blog', icon: faBlog },
 ]

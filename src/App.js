@@ -1,8 +1,14 @@
 import { useRef, useState, useEffect } from 'react'
+import { makeStyles } from '@material-ui/core/styles'
 import Sidenav from './components/Sidenav'
 import HomePage from './pages/HomePage'
+import { useTheme, useMediaQuery } from '@material-ui/core'
+import MobileAppBar from './components/MobileAppBar'
+import { isMobile } from 'react-device-detect'
 
 const App = () => {
+  const theme = useTheme()
+
   const refs = {
     aboutMeRef: useRef(null),
     portfolioRef: useRef(null),
@@ -10,49 +16,48 @@ const App = () => {
     hobbiesRef: useRef(null),
   }
 
-  const handleSidenavClick = (tab) =>
+  const handleSidenavClick = (tab) => {
     refs[`${tab.ref}`].current.scrollIntoView({
       behavior: 'smooth',
     })
-
-  const [width, setWidth] = useState(window.innerWidth)
-  const [height, setHeight] = useState(window.innerHeight)
-  function handleWindowSizeChange() {
-    setWidth(window.innerWidth)
-    setHeight(window.innerHeight)
   }
+
   useEffect(() => {
-    window.addEventListener('resize', handleWindowSizeChange)
-    return () => {
-      window.removeEventListener('resize', handleWindowSizeChange)
-    }
+    document.title = 'Sean Rooney - Personal Website'
   }, [])
 
-  let isMobile = width <= 768
-  let isIpad = width > 768 && width <= 1370
+  const snapSideNavToTop = useMediaQuery(theme.breakpoints.down('sm'))
+
   return (
-    <div
-      style={{
-        display: 'flex',
-        flex: 1,
-        overflow: 'hidden',
-        width: '100%',
-        height: '100%',
-      }}
-    >
-      {!isMobile && (
-        <div style={{ flex: 0.18, height: '100vh' }}>
+    <div style={{ display: 'flex' }}>
+      {!snapSideNavToTop && (
+        <div style={{ width: '15%' }}>
           <Sidenav handleClick={handleSidenavClick} />
         </div>
       )}
       <div
         style={{
-          flex: isMobile ? 1 : 0.82,
-          overflowY: 'scroll',
           display: 'flex',
+          flex: 1,
+          width: '100%',
+          flexDirection: isMobile ? 'column' : 'row',
         }}
+        ref={refs.aboutMeRef}
       >
-        <HomePage isMobile={isMobile} isIpad={isIpad} refs={refs} />
+        {snapSideNavToTop && (
+          <div style={{ height: 65 }}>
+            <MobileAppBar handleSidenavClick={handleSidenavClick} />
+          </div>
+        )}
+        <div
+          style={{
+            flex: 1,
+            //paddingTop: snapSideNavToTop ? 50 : 0,
+            paddingLeft: snapSideNavToTop ? 0 : 10,
+          }}
+        >
+          <HomePage isMobile={snapSideNavToTop} refs={refs} />
+        </div>
       </div>
     </div>
   )

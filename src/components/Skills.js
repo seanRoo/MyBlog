@@ -20,11 +20,10 @@ const Skills = ({ isMobile }) => (
         </Typography>
       </div>
       <Typography variant="body1">
-        I have nearly three years of industry experience but I feel like the
-        side projects I work on in my spare time have really helped in raising
-        my skill level and familiarity with other popular tech in the industry.
-        Take a look below for the (mostly web-dev related) stuff I've gained
-        good knowledge in since beginning my Computer Science journey in 2014.
+        I've picked up a lot tech skills since the beginning of my Software
+        Development career back in 2019. Take a look below for the (mostly front
+        end related) stuff I've gained good knowledge in since beginning my
+        Computer Science journey in 2014.
       </Typography>
     </div>
     <SkillList isMobile={isMobile} />

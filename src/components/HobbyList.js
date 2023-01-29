@@ -11,8 +11,6 @@ const HobbyList = ({ isMobile }) => (
       listStyle: 'none',
       paddingLeft: 0,
       alignContent: 'flex-start',
-      //   height: '100%',
-      //   width: '100%',
     }}
   >
     {hobbies?.map((hobby) => (

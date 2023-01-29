@@ -1,13 +1,33 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Typography } from '@material-ui/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearchMinus, faSearchPlus } from '@fortawesome/free-solid-svg-icons'
-import CV from '../assets/Sean_Rooney_CV.pdf'
-import { Document, Page, pdfjs } from 'react-pdf'
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
+import CV from '../assets/CV_image.png'
+import ReactImageMagnify from 'react-image-magnify'
+import ReactSlick from 'react-slick'
 
-const CVSection = ({ isMobile }) => {
-  const [pdfDimensions, setPdfDimensions] = useState(1)
+const CVSection = ({ isMobile }, props) => {
+  const [cvLoaded, setCVLoaded] = useState(false)
+
+  const { rimProps, rsProps } = props
+  const frontSrcSet = [
+    { src: CV, setting: '500w' },
+    { src: CV, setting: '779w' },
+    { src: CV, setting: '1020w' },
+    { src: CV, setting: '1200w' },
+    { src: CV, setting: '1426w' },
+  ]
+  //     .map(item => `${item.src} ${item.setting}`)
+  //     .join(', ');
+
+  const dataSource = [
+    {
+      srcSet: frontSrcSet,
+      small: CV,
+      large: CV,
+    },
+  ]
+
   return (
     <div
       style={{
@@ -25,18 +45,45 @@ const CVSection = ({ isMobile }) => {
           What I've done
         </Typography>
       </div>
-
-      {/* PDF div */}
       <div
         style={{
-          margin: 'auto',
           maxWidth: '80%',
           maxHeight: '80%',
+          margin: 'auto',
         }}
       >
-        <Document file={CV} onLoadSuccess={() => console.log('yo')}>
-          <Page pageNumber={1} />
-        </Document>
+        <ReactSlick
+          {...{
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          }}
+          {...rsProps}
+        >
+          <div>
+            <ReactImageMagnify
+              {...{
+                smallImage: {
+                  alt: 'Wristwatch by Versace',
+                  isFluidWidth: true,
+                  src: CV,
+                  srcSet: dataSource.srcSet,
+                  sizes:
+                    '(max-width: 480px) 100vw, (max-width: 1200px) 30vw, 360px',
+                },
+                largeImage: {
+                  src: CV,
+                  width: 1426,
+                  height: 2000,
+                },
+                lensStyle: { backgroundColor: 'rgba(0,0,0,.6)' },
+              }}
+              {...rimProps}
+            />
+          </div>
+        </ReactSlick>
       </div>
     </div>
   )

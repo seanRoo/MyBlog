@@ -6,6 +6,7 @@ import HobbySection from '../components/HobbySection'
 import { pdfjs } from 'react-pdf'
 import CVSection from '../components/CVSection'
 import './HomePage.css'
+import SocialsSectionMobile from '../components/SocialsSectionMobile'
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
 
 const HomePage = forwardRef(({ isMobile, isIpad, refs }) => {
@@ -14,7 +15,6 @@ const HomePage = forwardRef(({ isMobile, isIpad, refs }) => {
       style={{
         flexDirection: 'column',
         display: 'flex',
-        overflowY: 'scroll',
         overflowX: 'hidden',
       }}
     >
@@ -25,16 +25,16 @@ const HomePage = forwardRef(({ isMobile, isIpad, refs }) => {
         }}
       >
         <div
-          ref={refs.aboutMeRef}
           style={{
             display: 'flex',
             flexDirection: 'row',
             padding: isMobile ? 20 : 40,
+            paddingRight: 10,
           }}
         >
           <div
             style={{
-              flex: isMobile ? 1 : 0.65,
+              flex: 1,
               display: 'flex',
               flexDirection: 'column',
             }}
@@ -48,22 +48,20 @@ const HomePage = forwardRef(({ isMobile, isIpad, refs }) => {
           </div>
         </div>
       </div>
-      <div ref={refs.portfolioRef} style={{}}>
+      <div ref={refs.portfolioRef}>
         <Skills isMobile={isMobile} />
       </div>
-      <div ref={refs.cvRef} style={{ paddingTop: 20 }}>
+      {/* <div ref={refs.cvRef} style={{ paddingTop: 20, scrollMargin: 60 }}>
         <CVSection isMobile={isMobile} />
-      </div>
-      <div
-        className="hobbySection"
-        ref={refs.hobbiesRef}
-        // style={{
-        //   // marginBottom: 30,
-        //   minHeight: isMobile && '60vh',
-        // }}
-      >
+      </div> */}
+      <div ref={refs.hobbiesRef}>
         <HobbySection isMobile={isMobile} />
       </div>
+      {isMobile && (
+        <div>
+          <SocialsSectionMobile isMobile={isMobile} />
+        </div>
+      )}
     </div>
   )
 })

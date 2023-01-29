@@ -1,6 +1,7 @@
 import { Button } from '@material-ui/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFileAlt, faHammer } from '@fortawesome/free-solid-svg-icons'
+import CV from '../assets/Sean_Rooney_CV.pdf'
 
 const HeaderButtonContainer = ({ isMobile }) => (
   <>
@@ -41,8 +42,8 @@ const HeaderButtonContainer = ({ isMobile }) => (
       }}
     >
       <a
-        href="/Sean_Rooney_CV.pdf"
-        download
+        href={CV}
+        download="sean_rooney_CV"
         style={{
           textDecoration: 'none',
           color: 'inherit',

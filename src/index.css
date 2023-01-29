@@ -18,7 +18,7 @@ code {
 
 #root {
   height: 100vh;
-  /* overflow-y: hidden; */
+  overflow-y: scroll;
 }
 
 .react-pdf__Page__canvas {

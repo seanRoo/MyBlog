@@ -43,10 +43,7 @@ const SkillList = ({ isMobile }) => (
           >
             {skill.title}
           </Typography>
-          <Typography
-            component="body2"
-            style={{ fontSize: 14, fontWeight: 'lighter' }}
-          >
+          <Typography component="body2" style={{ fontSize: 14 }}>
             {skill.body || null}
           </Typography>
         </li>
