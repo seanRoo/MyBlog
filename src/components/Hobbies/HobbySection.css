@@ -1,0 +1,12 @@
+.hobbySectionContainer {
+  background-color: white;
+  scroll-snap-align: center;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 10px;
+}
+
+.hobbySectionMobile {
+  padding-right: 20px !important;
+  padding-left: 20px !important;
+}

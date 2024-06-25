@@ -1,4 +1,4 @@
-import { Typography, Button, Divider, List, ListItem } from '@material-ui/core'
+import { Typography, Button, Divider, List, ListItem } from '@mui/material'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faAt } from '@fortawesome/free-solid-svg-icons'
@@ -27,9 +27,6 @@ const Sidenav = ({ handleClick, isMobile }) => {
           flexDirection: 'column',
         }}
       >
-        {/* <Typography style={{ fontWeight: 'bold', color: 'white' }} variant="h6">
-          Sean Rooney
-        </Typography> */}
         <div
           style={{
             borderRadius: '50%',

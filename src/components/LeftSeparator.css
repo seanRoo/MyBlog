@@ -1,0 +1,9 @@
+.leftSeparatorContainer {
+  border-left: 6px solid #6c51a4;
+  margin-bottom: 16px;
+
+  h4 {
+    font-weight: bold;
+    margin-left: 14px;
+  }
+}

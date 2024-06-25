@@ -1,5 +1,5 @@
-import { Typography } from '@material-ui/core'
-import { hobbies } from '../utils'
+import Typography from '@mui/material/Typography'
+import { hobbies } from '../../utils'
 
 const HobbyList = ({ isMobile }) => (
   <ul

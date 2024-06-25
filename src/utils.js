@@ -11,7 +11,6 @@ import {
   Testinglibrary,
   Javascript,
   Typescript,
-  Java,
   Cplusplus,
   Csharp,
   Codeceptjs,
@@ -20,7 +19,7 @@ import {
   Postgresql,
   Html5,
   CssThree,
-  NodeDotJs,
+  Nodedotjs,
   Python,
   Stackoverflow,
   Git,
@@ -30,10 +29,14 @@ import {
   Jira,
 } from '@icons-pack/react-simple-icons'
 import { BiFootball, BiDumbbell } from 'react-icons/bi'
-import { GiAirplaneDeparture } from 'react-icons/gi'
+import { FaJava } from 'react-icons/fa'
+import { IoCodeSlashOutline } from 'react-icons/io5'
+import { GiAirplaneDeparture, GiForestCamp, GiCookingPot } from 'react-icons/gi'
 import { MdComputer } from 'react-icons/md'
 import { IoPizzaOutline } from 'react-icons/io5'
+import { GiBeerStein } from 'react-icons/gi'
 import { MdPlaylistAddCheck } from 'react-icons/md'
+import { faJava } from '@fortawesome/free-brands-svg-icons'
 
 export const hobbies = [
   {
@@ -49,16 +52,28 @@ export const hobbies = [
     icons: [{ value: GiAirplaneDeparture, color: 'black' }],
   },
   {
+    title: 'Camping',
+    icons: [{ value: GiForestCamp, color: 'black' }],
+  },
+  {
     title: 'Tech',
     icons: [{ value: MdComputer, color: 'black' }],
+  },
+  {
+    title: 'Coding',
+    icons: [{ value: IoCodeSlashOutline, color: 'black' }],
   },
   {
     title: 'Food',
     icons: [{ value: IoPizzaOutline, color: 'black' }],
   },
   {
-    title: 'Evenly numbered lists',
-    icons: [{ value: MdPlaylistAddCheck, color: 'black' }],
+    title: 'Cooking',
+    icons: [{ value: GiCookingPot, color: 'black' }],
+  },
+  {
+    title: 'Socialising',
+    icons: [{ value: GiBeerStein, color: 'black' }],
   },
 ]
 export const skills = [
@@ -100,8 +115,8 @@ export const skills = [
   {
     title: 'NodeJs, Java, C# and more',
     icons: [
-      { value: NodeDotJs, color: 'green' },
-      { value: Java, color: 'blue' },
+      { value: Nodedotjs, color: 'green' },
+      { value: FaJava, color: 'blue' },
       { value: Csharp, color: 'purple' },
       { value: Python, color: '#456E9C' },
       { value: Cplusplus, color: 'darkblue' },

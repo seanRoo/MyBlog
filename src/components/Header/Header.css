@@ -1,0 +1,123 @@
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
+  margin-top: 20px;
+
+  .innerContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: space-between;
+  }
+
+  .headerInfo {
+    flex: 0.95;
+    margin-bottom: 12px;
+  }
+
+  .headerButtons {
+    display: flex;
+    flex: 0.5;
+
+    .projectsButton {
+      min-height: 20px;
+      margin: 0px 8px 0px 0px;
+      text-transform: none;
+      background-color: #6c51a4;
+      color: white;
+      font-size: 95%;
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
+      svg {
+        margin-right: 12px;
+        color: white;
+      }
+    }
+
+    .cvButton {
+      height: 40px;
+      margin: 0px 8px 0px 8px;
+      min-width: 100px;
+      text-transform: none;
+      font-size: 16px;
+
+      svg {
+        padding: 4px;
+        border-radius: 50%;
+        margin-right: 12px;
+      }
+    }
+  }
+
+  .accordion {
+    all: unset;
+    cursor: default;
+
+    .summary {
+      display: none;
+    }
+  }
+}
+
+.mobile {
+  padding-left: 20px;
+}
+
+.profilePicture {
+  width: 400px;
+  height: auto;
+  height: fit-content;
+  border-radius: 50%; /* Circular image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  border: 3px solid #f9f9f9; /* Border matching the background to blend in */
+}
+
+.contactDetails {
+  width: 94%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-family: 'Roboto', sans-serif; /* Using a distinctive font */
+  font-size: 18px;
+  color: #333;
+  margin: 20px 0;
+  background: linear-gradient(
+    135deg,
+    #f3f4f6,
+    #e2e8f0
+  ); /* Background gradient */
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.contactDetails span {
+  margin: 0 6px; /* Margin between each element */
+  letter-spacing: 0.5px; /* Adjust letter spacing */
+  font-weight: 700; /* Bold text */
+}
+
+.contactDetails span:not(:last-child) {
+  margin-right: 20px; /* Additional space before the | character */
+}
+
+.contactDetails span:first-child {
+  margin-left: 0;
+}
+
+.contactDetails a {
+  color: #0277bd; /* Optional: Customize link color */
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.contactDetails a:hover {
+  text-decoration: underline;
+  color: #0c66d4;
+}

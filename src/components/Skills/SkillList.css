@@ -1,0 +1,56 @@
+.skillListContainer {
+  padding: 40px;
+  padding-bottom: 0;
+
+  .skillsHeaderContainer {
+    margin-bottom: 36px;
+
+    h4 {
+      font-weight: bold;
+      margin-left: 14px;
+    }
+  }
+
+  .skillList {
+    display: flex;
+    flex-direction: row;
+    column-gap: 12px;
+    flex-wrap: wrap;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+
+    .item {
+      height: auto;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+      padding: 10px;
+      width: 31%;
+      min-height: 200px;
+
+      h6 {
+        font-weight: bold;
+      }
+
+      body2 {
+        font-size: 14px;
+      }
+
+      svg {
+        margin-right: 4px;
+      }
+    }
+    .item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+.mobile {
+  padding: 20px;
+
+  .item {
+    width: 100% !important;
+    min-height: 100px !important;
+  }
+}
